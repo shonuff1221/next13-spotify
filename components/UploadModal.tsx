@@ -120,57 +120,12 @@ const UploadModal = () => {
 
   return (
     <Modal
-      title="Add a song"
-      description="Upload an mp3 file"
+      title="Upload disabled"
+      description="Upload has been disabled for this demo to preserve free Supabase tier. Check youtube to see how it looks in action."
       isOpen={uploadModal.isOpen}
       onChange={onChange}
     >
-      <form 
-        onSubmit={handleSubmit(onSubmit)} 
-        className="flex flex-col gap-y-4"
-      >
-        <Input
-          id="title"
-          disabled={isLoading}
-          {...register('title', { required: true })}
-          placeholder="Song title"
-        />
-        <Input
-          id="author"
-          disabled={isLoading}
-          {...register('author', { required: true })}
-          placeholder="Song author"
-        />
-        <div>
-          <div className="pb-1">
-            Select a song file
-          </div>
-          <Input
-            placeholder="test" 
-            disabled={isLoading}
-            type="file"
-            accept=".mp3"
-            id="song"
-            {...register('song', { required: true })}
-          />
-        </div>
-        <div>
-          <div className="pb-1">
-            Select an image
-          </div>
-          <Input
-            placeholder="test" 
-            disabled={isLoading}
-            type="file"
-            accept="image/*"
-            id="image"
-            {...register('image', { required: true })}
-          />
-        </div>
-        <Button disabled={isLoading} type="submit">
-          Create
-        </Button>
-      </form>
+      <Button onClick={uploadModal.onClose}>I understand</Button>
     </Modal>
   );
 }
