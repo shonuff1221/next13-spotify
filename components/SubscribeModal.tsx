@@ -77,6 +77,9 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({
   if (products.length) {
     content = (
       <div>
+        <p className="pb-2 text-center text-sm">Stripe Test Card: 4242 4242 4242 4242</p>
+        <p className="pb-2 text-center text-sm">Stripe Test Expiry: 5/55 (anything in the future)</p>
+        <p className="pb-2 text-center text-sm">Stripe Test CVC: 555 (any 3 digit number)</p>
         {products.map((product) => {
           if (!product.prices?.length) {
             return (
